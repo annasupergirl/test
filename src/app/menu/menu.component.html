@@ -1,0 +1,26 @@
+<div class="menu">
+	<div class="menu__container">
+		<div class="menu__navigation">
+			<div class="menu__navigation_mobile" (click)="openMobileMenu()">
+				<span>Меню</span>
+			</div>
+			<div class="menu__navigation_desktop">
+				<ul class="menu__navigation_desktop__list">
+					<li *ngFor="let item of navigation" class="menu__navigation_desktop__list_item">
+						<a class="menu__navigation_desktop__list_item-link" [routerLink]="item.routerLink">{{ item.title }}</a>
+					</li>
+				</ul>
+			</div>
+			<div *ngIf="isShowMobileMenu" class="menu-mobile">
+				<div class="menu-mobile__overlay" (click)="openMobileMenu()"></div>
+				<div class="menu-mobile__container">
+					<ul class="menu-mobile__container__list">
+						<li *ngFor="let item of navigation" class="menu-mobile__container__list_item" (click)="openMobileMenu()">
+							<a class="menu-mobile__container__list_item-link" [routerLink]="item.routerLink">{{ item.title }}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
