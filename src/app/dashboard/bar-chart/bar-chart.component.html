@@ -1,0 +1,51 @@
+<svg #svgContex version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="graph" aria-labelledby="Sales Figures" role="img">
+	<title id="title">Sales Figures</title>
+		<g class="grid x-grid">
+			<line x1="80" x2="80" y1="5" y2="406"></line>
+		</g>
+		<g class="grid y-grid">
+			<line x1="70" x2="900" y1="400" y2="400"></line>
+		</g>
+		<g class="grid y-grid2">
+			<line x1="70" x2="900" y1="10" y2="10"></line>
+			<line x1="70" x2="900" y1="54" y2="54"></line>
+			<line x1="70" x2="900" y1="98" y2="98"></line>
+			<line x1="70" x2="900" y1="142" y2="142"></line>
+			<line x1="70" x2="900" y1="186" y2="186"></line>
+			<line x1="70" x2="900" y1="230" y2="230"></line>
+			<line x1="70" x2="900" y1="274" y2="274"></line>
+			<line x1="70" x2="900" y1="318" y2="318"></line>
+			<line x1="70" x2="900" y1="362" y2="362"></line>
+		</g>
+		<g class="labels y-labels">
+			<text x="60" y="10">360</text>
+			<text x="60" y="54">320</text>
+			<text x="60" y="98">280</text>
+			<text x="60" y="142">240</text>
+			<text x="60" y="186">200</text>
+			<text x="60" y="230">160</text>
+			<text x="60" y="274">120</text>
+			<text x="60" y="318">80</text>
+			<text x="60" y="362">40</text>
+			<text x="60" y="406">0</text>
+		</g>
+		<g class="labels x-labels">
+			<text x="115" y="424">Январь</text>
+			<text x="185" y="424">Февраль</text>
+			<text x="255" y="424">Март</text>
+			<text x="325" y="424">Апрель</text>
+			<text x="395" y="424">Май</text>
+			<text x="465" y="424">Июнь</text>
+			<text x="535" y="424">Июль</text>
+			<text x="605" y="424">Август</text>
+			<text x="675" y="424">Сентябрь</text>
+			<text x="745" y="424">Октябрь</text>
+			<text x="815" y="424">Ноябрь</text>
+			<text x="885" y="424">Декабрь</text>
+		</g>
+		
+		<g *ngFor="let i of Array(data.countData.length)"
+			[style.fill]="data.color" 
+			class="bar" 
+			transform="scale(1,-1) translate(0,-390)"></g>
+</svg>

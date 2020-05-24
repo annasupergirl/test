@@ -1,0 +1,10 @@
+<div class="dashbord">
+    <p class="dashbord__text">Количество покупок</p>
+    <bar-chart 
+        *ngIf="(purchasesCount$ | async).countData?.length > 0"
+        [data]="purchasesCount$ | async"></bar-chart>
+    <p class="dashbord__text">Количество возвратов</p>
+    <bar-chart 
+        *ngIf="(returnsCount$ | async).countData?.length > 0"
+        [data]="returnsCount$ | async"></bar-chart>
+</div>

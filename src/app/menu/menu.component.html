@@ -6,7 +6,9 @@
 			</div>
 			<div class="menu__navigation_desktop">
 				<ul class="menu__navigation_desktop__list">
-					<li *ngFor="let item of navigation" class="menu__navigation_desktop__list_item">
+					<li 
+						*ngFor="let item of navigation" 
+						class="menu__navigation_desktop__list_item">
 						<a class="menu__navigation_desktop__list_item-link" [routerLink]="item.routerLink">{{ item.title }}</a>
 					</li>
 				</ul>
