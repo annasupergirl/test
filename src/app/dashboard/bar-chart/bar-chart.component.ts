@@ -7,6 +7,7 @@ import {
 	AfterViewInit
 } from '@angular/core';
 import { IData } from '../dasboard.models';
+import { SVGAnimElement } from './bar-chart.models';
 
 @Component({
 	selector: 'bar-chart',
@@ -35,7 +36,7 @@ export class BarChartComponent implements AfterViewInit {
 		const url = 'http://www.w3.org/2000/svg';
 		let activeElement = this.svgContex.toArray()[0].nativeElement;
 		let arr = activeElement.getElementsByClassName('bar');
-		for(var i = 0; i < arr.length; i++) {
+		for(let i = 0; i < arr.length; i++) {
 			if (isDeleteRect) {
 				let rect = arr[i].getElementsByTagName('rect');
 				rect[0].remove();
@@ -47,15 +48,17 @@ export class BarChartComponent implements AfterViewInit {
 			newRect.setAttribute('width', '30');
 			newRect.setAttribute('x', this.coordinateX[i]);
 
-			let animation = document.createElementNS(url, 'animate');
+			let animation = <SVGAnimElement>document.createElementNS(url, 'animate');
 			animation.setAttribute('attributeName', 'height');
 			animation.setAttribute('from', '-10');
 			animation.setAttribute('to', this.data.countData[i]);
 			animation.setAttribute('dur', '0.5s');
 			animation.setAttribute('fill', 'freeze');
+			animation.setAttribute('begin', 'indefinite');
 			newRect.append(animation);
 			
 			arr[i].append(newRect);
+			animation.beginElement();
 		}
 	}
 
